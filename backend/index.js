@@ -6,12 +6,7 @@ import cors from "cors";
 import userRoute from "./route/userRoute.js";
 import bookRoute from "./route/bookRoute.js";
 const app = express();
-const corsOptions = {
-  origin: "https://page-pilot-g90.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true, // Set this to false if not using cookies
-};
+
 
 const mongo = async () => {
   try {
@@ -24,7 +19,7 @@ const mongo = async () => {
 };
 
 // MIDDLEWARES.
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json()); // To validate json objects.
 app.use("/user", userRoute); // user routes.
 app.use("/books", bookRoute); // book routes.
