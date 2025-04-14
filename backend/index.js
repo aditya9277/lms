@@ -10,7 +10,7 @@ const corsOptions = {
   origin: "https://page-pilot-g90.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: false, // Set this to false if not using cookies
+  credentials: true, // Set this to false if not using cookies
 };
 
 const mongo = async () => {
