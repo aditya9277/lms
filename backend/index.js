@@ -7,8 +7,10 @@ import userRoute from "./route/userRoute.js";
 import bookRoute from "./route/bookRoute.js";
 const app = express();
 const corsOptions = {
-  origin: "page-pilot-g90.vercel.app",
-  credentials:true,
+  origin: "https://page-pilot-g90.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: false, // Set this to false if not using cookies
 };
 
 const mongo = async () => {
